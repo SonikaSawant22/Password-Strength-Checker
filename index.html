@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="hero-card">
+          <p class="eyebrow">Security Lab</p>
+          <h1>Password Strength Checker</h1>
+          <p class="subhead">
+            Type a password to get a score, entropy estimate, and clear next steps.
+          </p>
+          <div class="input-wrap">
+            <label class="sr-only" for="passwordInput">Password</label>
+            <input
+              id="passwordInput"
+              type="password"
+              placeholder="Enter password"
+              autocomplete="new-password"
+            />
+            <button id="toggleVisibility" type="button" class="ghost-btn">
+              Show
+            </button>
+          </div>
+
+          <div class="meter">
+            <div class="meter-fill" id="meterFill"></div>
+          </div>
+          <div class="stats">
+            <div>
+              <p class="stat-label">Score</p>
+              <p class="stat-value" id="scoreValue">0</p>
+            </div>
+            <div>
+              <p class="stat-label">Rating</p>
+              <p class="stat-value" id="ratingValue">Very Weak</p>
+            </div>
+            <div>
+              <p class="stat-label">Entropy</p>
+              <p class="stat-value" id="entropyValue">0.0 bits</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="insights">
+          <h2>Checklist</h2>
+          <ul id="checklist">
+            <li data-check="length">At least 8 characters</li>
+            <li data-check="lower">Lowercase letters</li>
+            <li data-check="upper">Uppercase letters</li>
+            <li data-check="number">Numbers</li>
+            <li data-check="symbol">Symbols</li>
+          </ul>
+          <div class="tips">
+            <h3>Suggestions</h3>
+            <ul id="suggestions">
+              <li>Start typing to see feedback.</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
